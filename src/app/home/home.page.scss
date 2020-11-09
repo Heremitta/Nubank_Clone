@@ -1,27 +1,123 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+ion-header{
+  ion-toolbar{
+    --min-height: 100px;
+    ion-title{
+      align-items: flex-end;
+      img{
+        width: 45px;
+        vertical-align: middle;
+        margin-right: 10px ;
+      }
+      span{
+        font-size: 22px;
+      }
+      ion-button{
+        display: block;
+      }
+    }
+  }
 }
+ion-content{
+  .background{
+    opacity: 0;
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+    .bank-information{
+      .qrcode{
+        width: 120px;
+        margin:16px auto;
+      }
+      span{
+        margin: 5px 0;
+        font-size: 14px;
+        display: block;
+      }
+    }
+    ion-list{
+      margin-top:32px;
+      background: transparent;
+      ion-item{
+        color: #fff;
+        --background: transparent!important;
+        --detail-icon-opacity:1;
+        &:first-of-type{
+          border-top: 0.55px solid var(--border-color)
+        }
+      }
+    }
+    ion-button.logout{
+      margin-top: 32px;
+      margin-bottom: 100px;
+    }
+  }
+  .blocks{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    z-index: 999;
+    ion-card{
+      .cash{
+        span{
+          &.value{
+            font-size: 30px;
+            display: block;
+          }
+          &.blue{
+            color:#0ab9cd;
+          }
+          &.green{
+            color:#94c22b;
+          }
+        }
+      }
+      .footer{
+        background: #f4f5f8;
+      }
+      .title{
+        font-size: 20px;
+      }
+      .gift{
+        font-size: 30px;
+      }
+    }
+  }
 }
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-footer{
+  &.hidden{
+    height: 0;
+    ion-slides{
+      opacity: 0;
+    }
+  }
+  ion-slides{
+    ion-slide{
+      .container{
+        width: 100%;
+        height: 100px;
+        background: var( --ion-color-primary-tint);
+        padding:10px;
+        margin: 0 5px;
+        display: flex;
+        flex-direction: column;
+        // align-items: center;
+        justify-content: space-evenly;
+        ion-icon{
+          font-size: 25px;
+        }
+        span{
+          font-size: 16px;
+        }
+      }
+    }
+  }
 }
-
-#container a {
-  text-decoration: none;
+.opacity-transition{
+  transition: opacity .3s;
+}
+.fixed{
+  position: fixed!important;
+  top: 110px;
+  overflow: hidden!important;
 }
